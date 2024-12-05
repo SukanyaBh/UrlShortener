@@ -6,6 +6,9 @@
     <ImplicitUsings>enabled</ImplicitUsings>
   </PropertyGroup>
   <ItemGroup>
+    <None Include="local.settings.json" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="cronos" Version="0.8.4" />
     <PackageReference Include="Microsoft.Azure.Cosmos.Table" Version="1.0.8" />
     <PackageReference Include="Microsoft.Azure.Functions.Worker" Version="1.21.0" />
