@@ -2,7 +2,7 @@
 
 @using Cloud5mins.ShortenerTools.Core.Domain
 @using Cloud5mins.ShortenerTools.Core.Messages;
-@using Microsoft.AspNetCore.Authorization
+@* @using Microsoft.AspNetCore.Authorization *@
 @using Syncfusion.Blazor.Grids
 @using Syncfusion.Blazor.Inputs
 @using System.Net
@@ -64,10 +64,10 @@ else
                     @{
                         var url = (context as ShortUrlEntity);
                         <span>@url.Clicks</span>
-                        <button type="button" class="btn btn-outline-primary btn-sm" @onclick="@(() =>
-                        NavigateToStats(url.RowKey))">
-                            📊
-                        </button>
+                        // <button type="button" class="btn btn-outline-primary btn-sm" @onclick="@(() =>
+                        // NavigateToStats(url.RowKey))">
+                        //     📊
+                        // </button>
                     }
                 </Template>
             </GridColumn>
@@ -209,18 +209,18 @@ else
             {
                 urls = await response.Content.ReadFromJsonAsync<ListResponse>();
             }
-            else
-            {
-                switch (response.StatusCode)
-                {
-                    case HttpStatusCode.Unauthorized:
-                        NavigationManager.NavigateTo("/unauthorized");
-                        break;
-                    default:
-                        NavigationManager.NavigateTo("/404");
-                        break;
-                }
-            }
+            // else
+            // {
+            //     switch (response.StatusCode)
+            //     {
+            //         case HttpStatusCode.Unauthorized:
+            //             NavigationManager.NavigateTo("/unauthorized");
+            //             break;
+            //         default:
+            //             NavigationManager.NavigateTo("/404");
+            //             break;
+            //     }
+            // }
         }
         catch (Exception ex)
         {
@@ -283,7 +283,7 @@ else
 
     private void NavigateToStats(string vanity)
     {
-        NavigationManager.NavigateTo("/Statistics/" + vanity);
+        NavigationManager.NavigateTo("/statistics/" + vanity);
     }
 
     public async Task ArchiveShortUrl(ShortUrlEntity urlEntity)
