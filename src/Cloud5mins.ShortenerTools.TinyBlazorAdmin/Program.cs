@@ -9,8 +9,7 @@ builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
 var baseAddress = builder.HostEnvironment.BaseAddress;
 builder.Services
-        .AddScoped(sp => new HttpClient { BaseAddress = new Uri(baseAddress) })
-        .AddStaticWebAppsAuthentication();
+        .AddScoped(sp => new HttpClient { BaseAddress = new Uri(baseAddress) });
 
 // builder.Services.AddMsalAuthentication(options =>
 // {
