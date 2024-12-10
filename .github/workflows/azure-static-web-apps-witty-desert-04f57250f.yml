@@ -23,7 +23,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v2
         with:
-          dotnet-version: '7.0.x'  # Update with the version you're using
+          dotnet-version: '8.0.x'  # Corrected to install .NET 8.0
 
       - name: Build the Blazor App
         run: |
