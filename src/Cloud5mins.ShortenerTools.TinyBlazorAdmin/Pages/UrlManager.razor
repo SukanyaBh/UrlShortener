@@ -2,7 +2,6 @@
 
 @using Cloud5mins.ShortenerTools.Core.Domain
 @using Cloud5mins.ShortenerTools.Core.Messages;
-@* @using Microsoft.AspNetCore.Authorization *@
 @using Syncfusion.Blazor.Grids
 @using Syncfusion.Blazor.Inputs
 @using System.Net
@@ -209,18 +208,6 @@ else
             {
                 urls = await response.Content.ReadFromJsonAsync<ListResponse>();
             }
-            // else
-            // {
-            //     switch (response.StatusCode)
-            //     {
-            //         case HttpStatusCode.Unauthorized:
-            //             NavigationManager.NavigateTo("/unauthorized");
-            //             break;
-            //         default:
-            //             NavigationManager.NavigateTo("/404");
-            //             break;
-            //     }
-            // }
         }
         catch (Exception ex)
         {

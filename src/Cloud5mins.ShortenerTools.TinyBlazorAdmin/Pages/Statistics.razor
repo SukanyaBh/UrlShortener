@@ -5,7 +5,6 @@
 @using Cloud5mins.ShortenerTools.Core.Domain
 @using Syncfusion.Blazor.Charts
 @using Syncfusion.Blazor.Spinner
-@* @using Microsoft.AspNetCore.Authorization *@
 @using System.Collections.ObjectModel
 @using System.Text.Json
 @using System.Net
@@ -85,22 +84,10 @@
         {
             CancellationToken cancellationToken = new CancellationToken();
             using var response = await Http.PostAsJsonAsync("/api/UrlClickStatsByDay", new UrlClickStatsRequest(vanity), cancellationToken);
-            // if (response.IsSuccessStatusCode)
-            // {
                 var jsonResult = await response.Content.ReadAsStringAsync();
                 clickStatsList = JsonSerializer.Deserialize<ClickDateList>(jsonResult);
 
                 return new ObservableCollection<ClickDate>(clickStatsList.Items);
-            // }
-            // switch (response.StatusCode)
-            // {
-            //     case HttpStatusCode.Unauthorized:
-            //         NavigationManager.NavigateTo("/unauthorized");
-            //         break;
-            //     default:
-            //         NavigationManager.NavigateTo("/404");
-            //         break;
-            // }
         }
         catch (System.Exception ex)
         {

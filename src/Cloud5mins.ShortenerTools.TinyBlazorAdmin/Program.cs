@@ -2,7 +2,6 @@ using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Syncfusion.Blazor;
 using Cloud5mins.ShortenerTools.TinyBlazorAdmin;
-using AzureStaticWebApps.Blazor.Authentication;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
@@ -11,10 +10,6 @@ var baseAddress = builder.HostEnvironment.BaseAddress;
 builder.Services
         .AddScoped(sp => new HttpClient { BaseAddress = new Uri(baseAddress) });
 
-// builder.Services.AddMsalAuthentication(options =>
-// {
-//     builder.Configuration.Bind("AzureAd", options.ProviderOptions.Authentication);
-// });
 
 // regiser fusion blazor service
 // Community Licence for your personal use ONLY. Thank you Syncfusion for this generous offer.
