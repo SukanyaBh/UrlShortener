@@ -4,17 +4,14 @@
     },
     "routes": [
         {
-          "route": "/urlmanager*",
-          "allowedRoles": ["admin"]
+          "route": "/urlmanager*"
         },
         {
-          "route": "/statistics*",
-          "allowedRoles": ["admin"]
+          "route": "/statistics*"
         },
         {
           "route": "/api/*",
-          "methods": ["GET", "POST"],
-          "allowedRoles": ["admin"]
+          "methods": ["GET", "POST"]
         }
       ]
 }
